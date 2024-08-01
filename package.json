@@ -1,0 +1,16 @@
+{
+  "type": "module",
+  "scripts": {
+    "dev": "tsc -w",
+    "start:loader": "node inspect --import ./loader-config.js",
+    "start": "npm run start:loader dist/main.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.11",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "sharp": "^0.33.4"
+  }
+}
