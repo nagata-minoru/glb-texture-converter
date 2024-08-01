@@ -2,8 +2,10 @@
   "type": "module",
   "scripts": {
     "dev": "tsc -w",
-    "start:loader": "node inspect --import ./loader-config.js",
-    "start": "npm run start:loader dist/main.js"
+    "start:loader": "node --import ./loader-config.js",
+    "start:debug": "node inspect --import ./loader-config.js",
+    "start": "npm run start:loader dist/main.js",
+    "debug": "npm run start:debug dist/main.js"
   },
   "devDependencies": {
     "@types/node": "^20.14.11",
