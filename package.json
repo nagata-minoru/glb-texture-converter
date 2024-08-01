@@ -2,7 +2,9 @@
   "type": "module",
   "scripts": {
     "dev": "tsc -w",
-    "build": "tsc && terser dist/main.js -o dist/main.min.js",
+    "build:minify:main": "terser dist/main.js -o dist/main.min.js",
+    "build:minify:image-gltf-processor": "terser dist/image-gltf-processor.js -o dist/image-gltf-processor.min.js",
+    "build": "tsc && npm run build:minify:main && npm run build:minify:image-gltf-processor",
     "start:loader": "node --import ./loader-config.js",
     "start:debug": "node inspect --import ./loader-config.js",
     "start": "npm run start:loader dist/main.js",

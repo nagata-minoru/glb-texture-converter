@@ -3,6 +3,7 @@
     "target": "ESNext",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
+    "declaration": true, // 型定義ファイルの生成を有効にする
     "outDir": "./dist",
     "esModuleInterop": true,
     "skipLibCheck": true,
