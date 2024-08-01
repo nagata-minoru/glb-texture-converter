@@ -2,6 +2,7 @@
   "type": "module",
   "scripts": {
     "dev": "tsc -w",
+    "build": "tsc && terser dist/main.js -o dist/main.min.js",
     "start:loader": "node --import ./loader-config.js",
     "start:debug": "node inspect --import ./loader-config.js",
     "start": "npm run start:loader dist/main.js",
@@ -9,6 +10,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.14.11",
+    "terser": "^5.31.3",
     "typescript": "^5.5.3"
   },
   "dependencies": {
