@@ -10,4 +10,9 @@
 
 import { register } from 'node:module';
 import { pathToFileURL } from 'node:url';
-register('./loader.mjs', pathToFileURL('./'));
+import { resolve, dirname } from 'path';
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const loaderPath = resolve(__dirname, './loader.mjs');
+register(loaderPath, pathToFileURL('./'));
