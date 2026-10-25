@@ -55,11 +55,29 @@
 - `loader.mjs`: HTTPSからのモジュールインポートを処理するカスタムローダー。
 - `.gitignore`: バージョン管理から除外するファイルやディレクトリ。
 - `src/main.ts`: メインスクリプト。GLBファイルのテクスチャをリサイズして変換します。
+- `src/image-gltf-processor.ts`: テクスチャの取り出し・リサイズ・書き戻しと、ファイル保存を行います。
+- `vitest.config.ts`: Vitestの設定ファイル。外部のHTTPSモジュールをスタブに差し替えます。
+- `test/`: テストコード。`test/stubs/` にはHTTPSモジュール(`GLTF.js`、`GLB.js`)の代替スタブがあります。
+
+## テスト
+
+テストランナーには [Vitest](https://vitest.dev/) を使用しています。
+
+```bash
+npm test
+```
+
+- `src/` のTypeScriptを直接テストするため、事前に `tsc` でビルドする必要はありません。
+- 外部のHTTPSモジュールはスタブに差し替えているため、ネットワークなしで実行できます。
+- ウォッチモードで実行する場合は `npx vitest` を使います。
+- スタブの `.glb` はJSONのバイト列で代用しているため、実際のGLBのencode/decodeはテストされません。
 
 ## スクリプト
 
 - `npm run dev`: TypeScriptコードを監視しながらトランスパイルします。
+- `npm run build`: TypeScriptをトランスパイルし、`dist/` のJavaScriptをminifyします。
 - `npm start`: カスタムローダーを使用してメインスクリプトを実行します。
+- `npm test`: Vitestでテストを1回実行します。
 
 ## ライセンス
 
