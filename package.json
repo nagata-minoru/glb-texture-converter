@@ -12,16 +12,19 @@
     "build": "tsc && npm run build:minify:main && npm run build:minify:image-gltf-processor",
     "start:loader": "node --import ./loader-config.js",
     "start:debug": "node inspect --import ./loader-config.js",
+    "test": "vitest run",
     "start": "npm run start:loader dist/main.js",
     "debug": "npm run start:debug dist/main.js"
   },
   "devDependencies": {
-    "@types/node": "^20.14.11",
+    "@types/node": "^22.20.5",
     "terser": "^5.31.3",
-    "typescript": "^5.5.3"
+    "typescript": "^5.5.3",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
   },
   "dependencies": {
     "node-fetch": "^3.3.2",
-    "sharp": "^0.33.4"
+    "sharp": "^0.35.5"
   }
 }
