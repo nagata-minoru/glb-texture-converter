@@ -5,6 +5,7 @@
     "moduleResolution": "NodeNext",
     "declaration": true, // 型定義ファイルの生成を有効にする
     "outDir": "./dist",
+    "rootDir": "./src",
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
