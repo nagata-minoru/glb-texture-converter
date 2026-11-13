@@ -17,7 +17,7 @@
     "debug": "npm run start:debug dist/main.js"
   },
   "devDependencies": {
-    "@types/node": "^26.6.5",
+    "@types/node": "^26.6.6",
     "terser": "^5.51.2",
     "typescript": "^7.0.2",
     "vite": "^8.3.5",
